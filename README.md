@@ -17,7 +17,7 @@ Your database admin was kind enough to give you a list of all customers and how 
  
 Design a web application that accepts a customer list (as csv) as input and creates the corresponding vouchers for each customer that is eligible.
 
-####Setup
+#### Setup
 - Application is set to run on port *4000* by default, this can be changed in the *application.properties* file located in src/main/resources via the property `server.port`
 - The configuration that is used to determine the value of a voucher based on customer spend is located in *config/VoucherConfig.json* and can be modified as required
 - Sample files are located in the *samples* folder
