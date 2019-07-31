@@ -1,0 +1,1 @@
+java -jar rewarder-1.0-SNAPSHOT.jar

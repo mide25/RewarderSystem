@@ -1,10 +1,9 @@
 package com.takehome.rewarder.models;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+import com.takehome.rewarder.util.VoucherCodeGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Voucher {
 
@@ -58,9 +57,7 @@ public class Voucher {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-        LocalDateTime startTime = LocalDateTime.now();
-        String timeJumbled = startTime.toString().replace("-", "").replace(":", "").replace(".", "").replace("T", "");
-        this.voucherCode = new String(Base64.encodeBase64String(timeJumbled.getBytes()));
+        this.voucherCode = VoucherCodeGenerator.randomString(7);
     }
 
     public String getVoucherCode() {
