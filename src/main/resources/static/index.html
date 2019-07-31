@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rewarderApp" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <title>Rewarder System | Voucher generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--<link href="css/external/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="alertifyjs/css/alertify.css" rel="stylesheet"/>
+    <link href="alertifyjs/css/themes/default.css" rel="stylesheet"/>
+
+    <script src="js/external/jquery.js"></script>
+    <script src="js/external/angular.min.js"></script>
+</head>
+<body ng-controller="RewarderController">
+
+<div class="wrapper">
+    <header>
+        <h1>Upload File</h1>
+        <span><a href="/rewarder/download-sample" download>Download Sample</a></span>
+    </header>
+
+    <div class="ways">
+        <ul>
+            <li class="active" style="position: relative">
+                <span ng-show="!uploading">Select File</span>
+                <span us-spinner="{color: '#22A4E6'}" spinner-key="upload-spinner"  ng-show="uploading"></span>
+                <input type="file" id="uploader">
+            </li>
+        </ul>
+    </div>
+    <div class="fileName"></div>
+
+    <footer>
+        <ul>
+            <li><span id="send" ng-click="uploadFile()">Submit</span></li>
+        </ul>
+    </footer>
+</div>
+<div class="wrapper" style="width: auto">
+    <table>
+        <thead>
+        <th>Customer Name</th>
+        <th>Voucher Value</th>
+        <th>Valiity(days)</th>
+        <th>Voucher Code</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="voucher in vouchers">
+            <td>{{voucher.customer.firstName}}&nbsp;{{voucher.customer.lastName}}</td>
+            <td>{{voucher.amount}}</td>
+            <td>{{voucher.validityInDays}}</td>
+            <td>{{voucher.voucherCode}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <span us-spinner="{color: '#22A4E6'}" spinner-key="upload-spinner"  ng-show="uploading"></span>
+                <span ng-show="noEligibleCustomerMessage && !uploading">{{noEligibleCustomerMessage}}</span>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="notification"></div>
+
+<script src="js/external/angular-route.min.js"></script>
+<script src="js/external/angular-spinner.min.js"></script>
+<script src="js/external/spin.min.js"></script>
+<script src="js/external/bootstrap.min.js"></script>
+<script src="alertifyjs/alertify.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+    var fileInput  = document.querySelector( "#uploader" ),
+        file = document.querySelector(".fileName");
+    fileInput.addEventListener( "change", function( event ) {
+        file.innerHTML = this.value;
+    });
+</script>
+</body>
+</html>

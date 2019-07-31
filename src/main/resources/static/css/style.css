@@ -1,0 +1,259 @@
+body {
+    background-color: #363940;
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+
+.wrapper  {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    width: 360px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 30px;
+}
+
+.wrapper footer ul {
+    margin: 0;
+    margin-top: 30px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.wrapper footer ul li {
+    flex: 1;
+}
+
+.wrapper footer li:last-child {
+    text-align: right;
+}
+.wrapper footer li:last-child span {
+    background-color: #22A4E6;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+h1 {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #7A7B7F;
+}
+header span {
+    flex: 1;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+}
+.ways ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.ways li {
+    align-self: center;
+    flex: 1;
+    background-color: #F5F7FA;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 0;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+}
+
+.ways li:first-child {
+    border-right: 0;
+}
+.ways li:last-child {
+    border-left: 0;
+}
+.ways li.active {
+    border: 2px solid #1AA1E5;
+    color: #66676C;
+}
+.ways li.active::before {
+    content: '\f00c';
+    font-family: 'fontawesome';
+    color: #1AA1E5;
+}
+.ways li:not(.active) {
+    padding: 16px 0;
+}
+section {
+    display: none;
+}
+section.active {
+    display: block;
+}
+section input,
+section textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    outline: 0;
+    background-color: #F5F7FA;
+    padding: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 1.4px;
+}
+section textarea {
+    min-height: 200px;
+}
+section select {
+    display: none;
+}
+.uploader {
+    flex-basis: 31%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.uploader {
+    background-color: #F5F7FA;
+    align-self: center;
+    text-align: center;
+    padding: 40px 0;
+    text-transform: uppercase;
+    color: #848EA1;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        margin-top: 0;
+    }
+    header {
+        flex-direction: column;
+    }
+    header span {
+        text-align: left;
+        margin-top: 10px;
+    }
+    .ways li,
+    section input,
+    section textarea,
+    .select-option .head,
+    .select-option .option div {
+        font-size: 8px;
+    }
+    .uploader {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+}
+#uploader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.notification {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    top: auto;
+    right: auto;
+}
+
+.notification p {
+    margin: 0;
+    padding: 0;
+}
+.notification .btn {
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 12px;
+    align-items: center;
+    animation: fadeIn .4s ease-in;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.notification .btn::before {
+    margin-right: 12px;
+    font-family: 'fontawesome';
+    font-size: 15px;
+}
+.notification span {
+    margin-left: 10px;
+    cursor: pointer;
+    flex: 1;
+    text-align: right;
+}
+
+.notification .error {
+    background-color: #ECC8C5;
+    border: 1px solid #BD8181;
+}
+.notification .error span {
+    color: #C79995;
+}
+.notification .error::before {
+    content: '\f05c';
+    color: #B2312F;
+
+}
+.notification .success {
+    background-color: #DEF2D6;
+    border: 1px solid #B3CEA9;
+}
+.notification .success span {
+    color: #AFC7A7;
+}
+.notification .success::before {
+    content: '\f00c';
+    color: #5A7052;
+}
+
+.fileName{
+    font-size: 12px;
+    color: #1AA1E5;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 12px;
+}
+
+table,thead,tbody,tfoot,tr, td,th{
+    text-align: center;
+    margin: auto;
+    border:1px solid #dedede;
+    padding: 1rem;
+    width: 50%;
+}
+
+#send{
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "minAmount": 1000,
+    "maxAmount": 5000,
+    "voucherValue": 100,
+    "validityInDays": 1
+  },
+  {
+    "minAmount": 5001,
+    "maxAmount": 10000,
+    "voucherValue": 500,
+    "validityInDays": 5
+  },
+  {
+    "minAmount": 10001,
+    "maxAmount": 0,
+    "voucherValue": 1000,
+    "validityInDays": 10
+  }
+]
